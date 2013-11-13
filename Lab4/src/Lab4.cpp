@@ -17,7 +17,6 @@ class Patient{
 	char bloodtype[3];
 	char gender;
 public:
-	Patient();
 	Patient(string, string, int, char[], char);
 	void show();
 };
@@ -34,6 +33,17 @@ Patient::Patient(string firstname, string lastname, int age1, char btype[], char
 
 void Patient:: show(){
 	cout<<givenname<<endl;
+	cout<<surname<<endl;
+	cout<<age<<endl;
+	cout<<bloodtype<<endl;
+	cout<<"GENDER: "<<gender<<endl;
 }
 
+int main(void)
+{
+	Patient x("Daniel", "Gottfried", 20, "AB", 'F');
+	x.show();
+	return(0);
+
+}
 
