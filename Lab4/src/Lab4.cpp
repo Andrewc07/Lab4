@@ -43,7 +43,6 @@ int main(void)
 {
 	Patient x("Andrew", "Christie", 79, "AB", 'F');
 	x.show();
-	cout<<"mins";
 	return(0);
 
 }
