@@ -32,11 +32,11 @@ Patient::Patient(string firstname, string lastname, int age1, char btype[], char
 }
 
 void Patient:: show(){
-	cout<<givenname<<endl;
-	cout<<surname<<endl;
-	cout<<age<<endl;
-	cout<<bloodtype<<endl;
-	cout<<"GENDER: "<<gender<<endl;
+	cout<<"First Name: "<<givenname<<endl;
+	cout<<"Last Name: "<<surname<<endl;
+	cout<<"Age: "<<age<<endl;
+	cout<<"Blood Type: "<<bloodtype<<endl;
+	cout<<"Gender: "<<gender<<endl;
 }
 
 int main(void)
