@@ -41,7 +41,7 @@ void Patient:: show(){
 
 int main(void)
 {
-	Patient x("Andrew", "Christie", 79, "AB", 'F');
+	Patient x("Andrew", "Christie", 79, "UNKnOWN", 'F');
 	x.show();
 	return(0);
 
