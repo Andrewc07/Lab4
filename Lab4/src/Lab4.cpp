@@ -1,6 +1,6 @@
 //============================================================================
 // Name        : Lab4.cpp
-// Author      : ME
+// Author      : Nico Arezza, Andrew Christie, Daniel Gottfried
 // Version     :
 // Copyright   : Your copyright notice
 // Description : Hello World in C++, Ansi-style
