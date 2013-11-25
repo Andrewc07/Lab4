@@ -1,17 +1,15 @@
-#ifndef BLOODTESTS_H_INCLUDED
-#define BLOODTESTS_H_INCLUDED
+#ifndef BLOODTESTS_HPP_INCLUDED
+#define BLOODTESTS_HPP_INCLUDED
 
 #include <iostream>
 #include <string>
+
+using namespace std;
 
 class bloodTest{
 protected:
     string testDate;
     string userComment;
-    bool patientGender;
-public:
-    bloodTest();
-    void showDate();
 };
 
 class hormoneLevels : public bloodTest{
@@ -21,9 +19,7 @@ class hormoneLevels : public bloodTest{
 public:
     hormoneLevels();
     void storeResults();
-    void testosteroneAnalysis();
-    void cortisolAnalysis();
-    void dheaAnalysis();
+    void analysis(bool gender);
 };
 
 class bloodSugar: public bloodTest{
@@ -32,8 +28,7 @@ class bloodSugar: public bloodTest{
 public:
     bloodSugar();
     void storeResults();
-    void glucoseAnalysis();
-    void insulinAnalysis();
+    void analysis();
 };
 
 class sti: public bloodTest{
@@ -43,9 +38,7 @@ class sti: public bloodTest{
 public:
     sti();
     void storeResults();
-    void hivAnalysis();
-    void hepatitisBAnalysis();
-    void hsv2Analysis();
+    void analysis();
 };
 
 #endif // BLOODTESTS_H_INCLUDED
