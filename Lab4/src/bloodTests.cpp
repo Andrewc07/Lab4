@@ -5,6 +5,12 @@
 
 using namespace std;
 
+bloodTest::bloodTest(){
+
+    testPerformed = 0;
+
+}
+
 string bloodTest::commentBloodTest(){
 
         string line;
@@ -20,17 +26,12 @@ string bloodTest::commentBloodTest(){
         return line;
 }
 
-
-bloodTest::bloodTest(){
-
-    testPerformed = 0;
-
-}
-
 void hormoneLevels::storeResults(){
 
     testPerformed = 1;
 
+    cout << "Is the patient a male or female? Press 1 for male or 0 for female." << endl;
+    cin >> gender;
     cout << "Enter the patient's testosterone levels in pg/mL" << endl;
     cin >> testosterone;
     cout << "Enter the patient's cortisol levels in mol/L" << endl;
@@ -100,7 +101,7 @@ if (testPerformed==1){
     }else if (testPerformed==0){cout << "The patient has not had their blood sugar levels tested." << endl;}
 }
 
-void sti::analysis(){
+void sti::storeResults(){
     char temp;
 
     testPerformed = 1;
@@ -140,7 +141,7 @@ void sti::analysis(){
 
 void sti::analysis(){
 
-if (testPerformed==1){}
+if (testPerformed==1){
 
     if (hiv==1) {cout << "The patient's blood tested positive for HIV." << endl; normal = 0;}
     else if (hiv==0) {cout << "The patient's blood tested negative for HIV." << endl; normal = 1;}

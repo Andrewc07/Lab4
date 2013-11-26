@@ -14,10 +14,11 @@ protected:
     bool testPerformed; //0 if no test has been performed, 1 if test has been performed
 public:
     bloodTest();
-    void commentBloodTest();
+    string commentBloodTest();
 };
 
 class hormoneLevels : protected bloodTest{
+    bool gender;
     double testosterone; //6.6-26.5 pg/mL men (15-26.5), 0-2.2 pg/mL women (1.4-2.2)
     double cortisol; //83-441 mol/L
     double dhea; //280-640 ug/dL men (400-500), 65-380 ug/dL women (350-430)
