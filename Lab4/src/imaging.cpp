@@ -8,25 +8,29 @@
 
 using namespace std;
 
-void imaging :: commentImaging(){
 
+/***********************IMAGING FUNCTIONS***************************/
 
+imaging :: imaging(){
+	testtaken=0;
+}
+
+string imaging :: writecomment(){
+
+	string line;
 	string word;
-	fstream writer;
-
-	writer.open ("imaging_comments.txt",ios::app);
 
 	cout<<"Type in the desire comments and when finished enter a return then type 'done'\n";
 
-	while(word!="done"){
-
+	while(word!="done")
+	{
 		getline (cin, word);
-//		cout<< word<<endl; //test to ensure comment is completely taken
-		comment.append(word);
+		if(word=="done")break;
+		//cout<< word<<endl; //test to ensure comment is completely taken
+		line.append(word);
+		line.append("\n");
 	}
-	writer << comment;
-
-	writer.close();
+	return line;
 }
 
 
@@ -46,4 +50,15 @@ void imaging :: commentPrint(){
 	myfile.close();
 }
 
+
+void MRI::addcomment(){
+	string temp;
+	temp= writecomment();
+	comment.append(temp);
+	time_t timer;
+	struct tm * timeinfo;
+	time(&timer);
+	timeinfo= localtime(&timer);
+	comment.append(asctime(timeinfo));
+}
 

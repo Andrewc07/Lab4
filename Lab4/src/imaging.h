@@ -10,10 +10,12 @@ class imaging {
 protected:
 	string user;
 	string comment;
+	bool testtaken;
 
 public:
 
-void commentImaging();
+imaging();
+string writecomment();
 void commentPrint();
 void showImage(char*);
 };
@@ -29,11 +31,11 @@ float Inversion_Time;
 float Image_Frequency;
 int SPP; //Samples per Pixel
 
+
 public:
 void taketest();
 void addcomment();
 void show();
-
 };
 
 class CT : protected imaging {
@@ -45,6 +47,11 @@ float KVP; //Peak kilo voltage output of the x-ray generator used
 int Acquisition_number; //identifying the number for single gathering of data over period of resulted in this image
 float Data_Collection_Diameter; //diameter in mm of the region over which data were collected
 float Exposure_Time;
+
+public:
+void taketest();
+void addcomment();
+void show();
 };
 
 class XRAY : protected imaging {
@@ -56,6 +63,11 @@ bool Lossy_Image_Compression;
 string Photometric_Interpretation; //Specifies the intended interpretation of the pixel data
 float Reference_Image_Sequence; //gives a co-ordinate of reference
 float Calibration_Image; //Indicates whether a reference object (phantom) of known size is present in the image and was used for calibration
+
+public:
+void taketest();
+void addcomment();
+void show();//some peoples incompitance astounds me 
 };
 
 #endif /* IMAGING_HPP_ */
