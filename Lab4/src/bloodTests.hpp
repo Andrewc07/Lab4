@@ -10,6 +10,8 @@ class bloodTest{
 protected:
     string testDate;
     string userComment;
+public:
+    void bloodTestComment();
 };
 
 class hormoneLevels : public bloodTest{

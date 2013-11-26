@@ -77,15 +77,15 @@ sti::sti(){
 
 void sti::analysis(){
 
-    if (hiv=NULL) cout << "The patient hasn't been tested for HIV antibodies." << endl;
+    if (hiv==NULL) cout << "The patient hasn't been tested for HIV antibodies." << endl;
     else if (hiv==1) cout << "The patient's blood tested positive for HIV." << endl;
     else if (hiv==0) cout << "The patient's blood tested negative for HIV." << endl;
 
-    if (hepatitisB=NULL) cout << "The patient hasn't been tested for Hepatitis B antibodies." << endl;
+    if (hepatitisB==NULL) cout << "The patient hasn't been tested for Hepatitis B antibodies." << endl;
     else if (hepatitisB==1) cout << "The patient's blood tested positive for Hepatitis B" << endl;
     else if (hepatitisB==0) cout << "The patient's blood tested negative for Hepatitis B" << endl;
 
-    if (hsv2=NULL) cout << "The patient hasn't been tested for Herpes Simplex Virus 2 antibodies." << endl;
+    if (hsv2==NULL) cout << "The patient hasn't been tested for Herpes Simplex Virus 2 antibodies." << endl;
     else if (hsv2==1) cout << "The patient's blood tested positive for Herpes Simplex Virus 2." << endl;
     else if (hsv2==0) cout << "The patient's blood tested negative for Herpes Simplex Virus 2." << endl;
 
