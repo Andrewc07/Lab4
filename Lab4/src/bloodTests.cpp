@@ -91,12 +91,12 @@ if (testPerformed==1){
 
     if (glucose>100) {cout << "The patient's blood glucose levels exceed the optimal range." << endl; normal = 0;}
     else if (glucose<70) {cout << "The patient's blood glucose levels fall below the optimal range." << endl; normal = 0;}
-    else if (glucose!=NULL&&glucose>=70&&glucose<=100)
+    else if (glucose>=70&&glucose<=100)
         {cout << "The patient's glucose levels are in the optimal range" << endl; normal = 1;}
 
     if (insulin>79) {cout << "The patient's insulin levels exceed the optimal range." << endl; normal = 0;}
     else if (insulin<57) {cout << "The patient's insulin levels fall below the optimal range." << endl; normal = 0;}
-    else if (insulin!=NULL&&insulin>=57&&insulin<=79)
+    else if (insulin>=57&&insulin<=79)
         {cout << "The patient's insulin are in the optimal range" << endl; normal = 1;}
     }else if (testPerformed==0){cout << "The patient has not had their blood sugar levels tested." << endl;}
 }
