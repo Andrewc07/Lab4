@@ -25,6 +25,7 @@ class hormoneLevels : protected bloodTest{
 public:
     void storeResults();
     void analysis();
+    void addComment();
 };
 
 class bloodSugar: protected bloodTest{
@@ -33,6 +34,7 @@ class bloodSugar: protected bloodTest{
 public:
     void storeResults();
     void analysis();
+    void addComment();
 };
 
 class sti: protected bloodTest{
@@ -42,6 +44,7 @@ class sti: protected bloodTest{
 public:
     void storeResults();
     void analysis();
+    void addComment();
 };
 
 #endif // BLOODTESTS_H_INCLUDED

@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <cstdlib>
+#include <ctime>
 #include "bloodTests.hpp"
 
 using namespace std;
@@ -20,7 +22,9 @@ string bloodTest::commentBloodTest(){
 
         while (word!="done"){
             getline(cin, word);
+            if(word=="done")break;
             line.append(word);
+            line.append("\n");
         }
 
         return line;
@@ -75,6 +79,17 @@ if (testPerformed==1){
     }else if (testPerformed==0){cout << "The patient has not had their hormone levels tested." << endl;}
 }
 
+void hormoneLevels::addComment(){
+	string temp;
+	temp= commentBloodTest();
+	comment.append(temp);
+	time_t timer;
+	struct tm * timeinfo;
+	time(&timer);
+	timeinfo= localtime(&timer);
+	comment.append(asctime(timeinfo));
+}
+
 void bloodSugar::storeResults(){
 
     testPerformed = 1;
@@ -99,6 +114,17 @@ if (testPerformed==1){
     else if (insulin>=57&&insulin<=79)
         {cout << "The patient's insulin are in the optimal range" << endl; normal = 1;}
     }else if (testPerformed==0){cout << "The patient has not had their blood sugar levels tested." << endl;}
+}
+
+void bloodSugar::addComment(){
+	string temp;
+	temp= commentBloodTest();
+	comment.append(temp);
+	time_t timer;
+	struct tm * timeinfo;
+	time(&timer);
+	timeinfo= localtime(&timer);
+	comment.append(asctime(timeinfo));
 }
 
 void sti::storeResults(){
@@ -152,4 +178,15 @@ if (testPerformed==1){
     if (hsv2==1) {cout << "The patient's blood tested positive for Herpes Simplex Virus 2." << endl; normal = 0;}
     else if (hsv2==0) {cout << "The patient's blood tested negative for Herpes Simplex Virus 2." << endl; normal = 1;}
     }else if (testPerformed==0){cout << "The patient has not been tested for sexually transmitted infections." << endl;}
+}
+
+void sti::addComment(){
+	string temp;
+	temp= commentBloodTest();
+	comment.append(temp);
+	time_t timer;
+	struct tm * timeinfo;
+	time(&timer);
+	timeinfo= localtime(&timer);
+	comment.append(asctime(timeinfo));
 }
