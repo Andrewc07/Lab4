@@ -8,37 +8,37 @@ using namespace std;
 
 class bloodTest{
 protected:
-    string testDate;
-    string userComment;
+    string user; //person accessing the information
+    string comment; //comment made by user
+    bool normal; //1 if normal test results, 0 if abnormal test results
+    bool testPerformed; //0 if no test has been performed, 1 if test has been performed
 public:
-    void bloodTestComment();
+    bloodTest();
+    void commentBloodTest();
 };
 
-class hormoneLevels : public bloodTest{
+class hormoneLevels : protected bloodTest{
     double testosterone; //6.6-26.5 pg/mL men (15-26.5), 0-2.2 pg/mL women (1.4-2.2)
     double cortisol; //83-441 mol/L
-    double dhea; //280-640 microgram/dL men (400-500), 65-380 microgram/dL women (350-430)
+    double dhea; //280-640 ug/dL men (400-500), 65-380 ug/dL women (350-430)
 public:
-    hormoneLevels();
-    void storeResults();
-    void analysis(bool gender);
-};
-
-class bloodSugar: public bloodTest{
-    double glucose; //70-100 mg/dL
-    double insulin; //57-79 pmol/L
-public:
-    bloodSugar();
     void storeResults();
     void analysis();
 };
 
-class sti: public bloodTest{
+class bloodSugar: protected bloodTest{
+    double glucose; //70-100 mg/dL
+    double insulin; //57-79 pmol/L
+public:
+    void storeResults();
+    void analysis();
+};
+
+class sti: protected bloodTest{
     bool hiv;
     bool hepatitisB;
     bool hsv2;
 public:
-    sti();
     void storeResults();
     void analysis();
 };
