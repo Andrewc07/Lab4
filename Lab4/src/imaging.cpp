@@ -64,6 +64,19 @@ void MRI :: taketest(){
 	//decision based on data scanning are based on the user of the classes
 }
 
+
+void MRI :: diplayimage(char*file){
+	int length;
+
+	length=100;
+
+	file = new char [length];
+	cout <<"Enter the name of the file you like to display";
+	cin>> file;
+
+	system(file);
+}
+
 /***********************CT FUNCTIONS***************************/
 
 void CT::addcomment(){
@@ -96,6 +109,19 @@ void CT :: taketest(){
 	//decision based on data scanning are based on the user of the classes
 }
 
+void CT :: diplayimage(char*file){
+	int length;
+
+	length=100;
+
+	file = new char [length];
+	cout <<"Enter the name of the file you like to display";
+	cin>> file;
+
+	system(file);
+}
+
+
 /***********************XRAY FUNCTIONS***************************/
 
 void XRAY::addcomment(){
@@ -126,4 +152,16 @@ void XRAY :: taketest(){
 
 	//additionally add data through scan of user input or FILE Input Output (FILE I/O)
 	//decision based on data scanning are based on the user of the classes
+}
+
+void XRAY :: diplayimage(char*file){
+	int length;
+
+	length=100;
+
+	file = new char [length];
+	cout <<"Enter the name of the file you like to display";
+	cin>> file;
+
+	system(file);
 }

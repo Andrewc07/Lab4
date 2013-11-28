@@ -18,12 +18,11 @@ public:
 
 	imaging();
 	string writecomment();
-	void showImage(char*);
 };
 
 class MRI : public imaging {
 
-	string MRIimage;	//store for MRI file name
+	char* MRIimage;	//store for MRI file name
 	string Acquisition_Type;  //method of scanning
 	string Scan_Option;  //types of scans
 	int SPP; //Samples per Pixel
@@ -38,11 +37,12 @@ public:
 	void taketest();
 	void addcomment();
 	void show();
+	void diplayimage(char*);
 };
 
 class CT : public imaging {
 
-	string CTimage;	//store for CT file name
+	char* CTimage;	//store for CT file name
 	int Pixel_Representation; //number of pixels
 	int Acquisition_number; //identifying the number for single gathering of data over period of resulted in this image
 	float Rescale_Slope; //in the equation specified in Rescale Intercept
@@ -55,11 +55,12 @@ public:
 	void taketest();
 	void addcomment();
 	void show();
+	void diplayimage(char*);
 };
 
 class XRAY : public imaging {
 
-	string XRAYimage;	//store for XRAY file name
+	char* XRAYimage;	//store for XRAY file name
 	string Image_Type;	//basic type/format of the image according to standards
 	string ARMS; //Anatomic Region Modifier Sequence
 	string Photometric_Interpretation; //Specifies the intended interpretation of the pixel data
@@ -71,7 +72,8 @@ public:
 	//XRAY(a,b,...,z) might be used to gather patient scan data info based on the design of hospital data base
 	void taketest();
 	void addcomment();
-	void show(); 
+	void show();
+	void diplayimage(char*);
 };
 
 #endif /* IMAGING_HPP_ */
