@@ -1,5 +1,5 @@
-#ifndef BLOODTESTS_HPP_INCLUDED
-#define BLOODTESTS_HPP_INCLUDED
+#ifndef BLOODTESTS_HPP_
+#define BLOODTESTS_HPP_
 
 #include <iostream>
 #include <string>
@@ -8,47 +8,46 @@ using namespace std;
 
 class bloodTest{
 protected:
-    string user; //person accessing the information
-    string comment; //comment made by user
-    bool normal; //1 if normal test results, 0 if abnormal test results
-    bool testPerformed; //0 if no test has been performed, 1 if test has been performed
+	string comment; //comment made by user
+	bool normal; //1 if normal test results, 0 if abnormal test results
+	bool testPerformed; //1 if test has been performed, 0 if no test has been performed
 public:
-    bloodTest();
-    string commentBloodTest();
+	bloodTest();
+	string commentBloodTest(); //appends user comment
+	bool istesttaken(); //checks if blood test has been performed
 };
 
-class hormoneLevels : protected bloodTest{
-    bool gender;
-    double testosterone; //6.6-26.5 pg/mL men (15-26.5), 0-2.2 pg/mL women (1.4-2.2)
-    double cortisol; //83-441 mol/L
-    double dhea; //280-640 ug/dL men (400-500), 65-380 ug/dL women (350-430)
+class hormoneLevels : public bloodTest{
+	bool gender; //1 if male, 0 if female
+	double testosterone; //testosterone levels in pg/mL
+	double cortisol; //cortisol levels in mol/L
+	double dhea; //DHEA levels in ug/dL
 public:
-    void storeResults();
-    void analysis();
-    void addComment();
+	void storeResults(); //prompts user to enter results for test
+	void analysis(); //determines whether results for test are normal or abnormal
+	void addComment(); //user may append a comment to the object
+	void show(); //displays test results
 };
 
-class bloodSugar: protected bloodTest{
-    double glucose; //70-100 mg/dL
-    double insulin; //57-79 pmol/L
+class bloodSugar: public bloodTest{
+	double glucose; //blood glucose levels in mg/dL
+	double insulin; //insulin levels in pmol/L
 public:
-    void storeResults();
-    void analysis();
-    void addComment();
+	void storeResults();
+	void analysis();
+	void addComment();
+	void show();
 };
 
-class sti: protected bloodTest{
-    bool hiv;
-    bool hepatitisB;
-    bool hsv2;
+class sti: public bloodTest{
+	bool hiv; //1 if patient tests positive for HIV antibodies, else 0
+	bool hepatitisB; //1 if patient tests positive for Hepatits B antibodies, else 0
+	bool hsv2; //1 if patient tests positive for Herpes Simplex 2 antibodies, else 0
 public:
-    void storeResults();
-    void analysis();
-    void addComment();
+	void storeResults();
+	void analysis();
+	void addComment();
+	void show();
 };
 
 #endif // BLOODTESTS_H_INCLUDED
-
-//http://en.wikipedia.org/wiki/Blood_sugar#High_blood_sugar
-//http://www.webmd.com/a-to-z-guides/cortisol-14668?page=2
-//http://www.lef.org/magazine/mag2006/may2006_report_blood_01.htm
